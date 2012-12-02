@@ -51,3 +51,9 @@ Gems dependencies:
 * Implemented a data structure helping to create new information sources.
 * Added amount parameter to convert: /treasuri.rb \<amount\>
 
+### Alpha 0.3
+
+* Selected currency by command line params: /treasuri.rb \<amount\> \<from\> \<to\>
+* Help section.
+* Obtaining valid currency codes by [web service](http://www.ezzylearning.com/services/CountryInformationService.asmx/GetCurrencies?)
+* YAML file as a local database caching the valid currency codes.
