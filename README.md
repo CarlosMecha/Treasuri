@@ -1,6 +1,6 @@
 # Treasuri
 
-Github: [Treasuri|https://github.com/CarlosMecha/Treasuri]
+Github: [Treasuri](https://github.com/CarlosMecha/Treasuri)
 
 ## License
 
@@ -35,8 +35,8 @@ A exchange rates client.
 Ruby v1.9.1
 
 Gems dependencies:
- - [httpclient|https://github.com/nahi/httpclient]
- - [json|http://flori.github.com/json/]
+ - [httpclient](https://github.com/nahi/httpclient)
+ - [json](http://flori.github.com/json/)
 
 ## Versions
 
