@@ -1,12 +1,6 @@
-# Treasuri
+# MIT License
 
-Github: [Treasuri|https://github.com/CarlosMecha/Treasuri]
-
-## License
-
-MIT License
-
-Copyright (C) 2012 Carlos Mecha 
+Copyright (c) 2012 Carlos Mecha
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -25,26 +19,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-## Description
-
-A exchange rates client. 
-
-## Requirements
-
-Ruby v1.9.1
-
-Gems dependencies:
- - [httpclient|https://github.com/nahi/httpclient]
- - [json|http://flori.github.com/json/]
-
-## Versions
-
-### Release 0.1 (20121021)
-
-* Text-based client.
-* Converts 1 USD to EUR and 1 EUR to USD with the actual exchange rate.
-* Takes the information from Google Calculator API.
-
-
 
