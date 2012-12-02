@@ -2,33 +2,40 @@
 
 # Treasuri main file.
 
-require 'httpclient'
-require 'json'
-require_relative 'response_parser'
+@@amount = 1
+@@c_from = 'USD'
+@@c_to = 'EUR'
 
-def request ( http, query )
-    response = http.get query
+def parse_params
 
-    # Parsing
-    JSON.parse(ResponseParser.parse(response.body))
+    if (ARGV.size >= 1)
+        begin
+            @@amount = Float(ARGV[0]).round(2)
+        rescue ArgumentError
+            puts ARGV[0] + ' is not a valid number.'
+            @@amount = 1
+        end
+        puts 'Amount to convert: ' << @@amount.to_s
+    end
+
 end
+
+
+require_relative 'exchange_data'
 
 puts 'Welcome to Treasuri v0.1'
 
-http = HTTPClient.new
+parse_params
 
-amount = 1
-c_from = 'USD'
-c_to = 'EUR'
-queryFrom = 'http://www.google.com/ig/calculator?hl=en&q=' << amount.to_s << c_from << '%3D%3F' << c_to
-queryTo = 'http://www.google.com/ig/calculator?hl=en&q=' << amount.to_s << c_to << '%3D%3F' << c_from
+exchange = RateDAO.new
 
-puts 'Getting finance rates from Google'
-jsonResponse = request http, queryFrom
+puts 'Getting exchange rates from ' << exchange.source_info
 
-puts sprintf '%s is %s.', jsonResponse['lhs'], jsonResponse['rhs']
+rate = exchange.get @@c_from, @@c_to, @@amount
 
-jsonResponse = request http, queryTo
+puts '%s is %s.' % [rate.from, rate.to]
 
-puts sprintf '%s is %s.', jsonResponse['lhs'], jsonResponse['rhs']
+rate = exchange.get @@c_to, @@c_from, @@amount
+
+puts '%s is %s.' % [rate.from, rate.to]
 

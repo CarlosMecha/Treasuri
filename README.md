@@ -46,5 +46,8 @@ Gems dependencies:
 * Converts 1 USD to EUR and 1 EUR to USD with the actual exchange rate.
 * Takes the information from Google Calculator API.
 
+### Release 0.2 (20121202)
 
+* Implemented a data structure helping to create new information sources.
+* Added amount parameter to convert: /treasuri.rb \<amount\>
 
