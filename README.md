@@ -58,4 +58,5 @@ Gems dependencies:
 * Obtaining valid currency codes by [web service](http://www.ezzylearning.com/services/CountryInformationService.asmx/GetCurrencies?)
 * YAML file as a local database caching the valid currency codes.
 * Optimized calc times.
-* Parsed Google Calculator API values
+* Parsed Google Calculator API values.
+* Removed global variables.
