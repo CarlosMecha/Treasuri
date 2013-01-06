@@ -24,8 +24,11 @@ class GoogleCalculatorSource
         jsonResponse = JSON.parse body
 
         rate = Rate.new
-        rate.from= jsonResponse['lhs'] 
-        rate.to= jsonResponse['rhs']
+        from= /[[:digit:]]+(\.[[:digit:]]+)?/.match(jsonResponse['lhs'])
+        to= /[[:digit:]]+(\.[[:digit:]]+)?/.match(jsonResponse['rhs'])
+
+        rate.from= Float(from[0]) if from and from.size > 0
+        rate.to= Float(to[0]) if from and from.size > 0
 
         rate
     end 

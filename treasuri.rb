@@ -46,6 +46,8 @@ end
 puts 'Welcome to Treasuri v0.1'
 puts 'Command: treasuri [ [ help | amount ] from_currency to_currency ]'
 
+
+
 loader = DataLoader.new
 @@valid_codes = loader.load_all
 
@@ -65,11 +67,9 @@ exchange = RateDAO.new
 
 puts 'Getting exchange rates from ' << exchange.source_info
 
-rate = exchange.get @@c_from, @@c_to, @@amount
+rate = exchange.get @@c_from, @@c_to, 1 
 
-puts '%s is %s.' % [rate.from, rate.to]
+puts '%.2f %s is %.2f %s.' % [@@amount, @@c_from, rate.to * @@amount, @@c_to]
 
-rate = exchange.get @@c_to, @@c_from, @@amount
-
-puts '%s is %s.' % [rate.from, rate.to]
+puts '%.2f %s is %.2f %s.' % [@@amount, @@c_to, (1/rate.to) * @@amount, @@c_from]
 
